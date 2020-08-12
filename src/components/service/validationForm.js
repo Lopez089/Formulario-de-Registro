@@ -8,7 +8,7 @@ const validationSchema = Yup.object().shape({
   apellidos: Yup.string()
     .min(2, "Escribe tu apellido")
     .max(255, "Debe de tener menos de 255 caracteres")
-    .required("Debe de introducir tu apellido")
+    .required("Debe de introducir tu apellido"),
 });
 
 export default validationSchema;

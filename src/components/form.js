@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import "animate.css";
-import validationSchema from "./validacion";
+import validationSchema from "./service/validationForm";
 import "bootstrap";
 
 const Form = () => {
@@ -36,7 +36,9 @@ const Form = () => {
                   }
                 />
                 <ErrorMessage name="name">
-                  {msg => <div className="invalid-feedback d-flex">{msg}</div>}
+                  {(msg) => (
+                    <div className="invalid-feedback d-flex">{msg}</div>
+                  )}
                 </ErrorMessage>
               </div>
               <div className="form-group">
@@ -55,7 +57,9 @@ const Form = () => {
                   }
                 />
                 <ErrorMessage name="apellidos">
-                  {msg => <div className="invalid-feedback d-flex">{msg}</div>}
+                  {(msg) => (
+                    <div className="invalid-feedback d-flex">{msg}</div>
+                  )}
                 </ErrorMessage>
               </div>
               <button
