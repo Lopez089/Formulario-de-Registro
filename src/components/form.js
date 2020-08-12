@@ -21,7 +21,7 @@ const Form = () => {
         }}
       >
         {({ errors, handleSubmit, isSubmitting, touched }) => (
-          <div className=" mt-5 d-flex align-items-center justify-content-center">
+          <div className=" mt-4 d-flex align-items-center justify-content-center">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <Field
@@ -70,7 +70,7 @@ const Form = () => {
                 type="submit"
                 disabled={!isSubmitting ? null : "disabled"}
               >
-                Submit
+                CREATE ACCOUNT
               </button>
             </form>
           </div>
