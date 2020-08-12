@@ -1,13 +1,16 @@
 import React from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import "animate.css";
-import validationSchema from "./service/validationForm";
+import validationSchema from "../service/validationForm";
 import "bootstrap";
 
 const Form = () => {
   return (
     <div className="h-75">
-      <p className="h3 text-muted text-center pt-5"> Registrate</p>
+      <p className="h3 text-info text-center pt-5"> REGISTER</p>
+      <p className="text-center">
+        <small className="text-muted  pt-1">IT´S COMPLETELY FREE</small>
+      </p>
       <Formik
         initialValues={{ name: "", apellidos: "" }}
         validationSchema={validationSchema}

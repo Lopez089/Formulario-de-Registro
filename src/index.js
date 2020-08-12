@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "animate.css";
-import { StateFooter } from "./components/stateFooter";
+import { StateFooter } from "./components/footer/stateFooter";
 import Form from "./components/form";
-import Footer from "./components/footer";
+import Footer from "./components/footer/footer";
 import "../src/styles.css";
 
 function App() {
