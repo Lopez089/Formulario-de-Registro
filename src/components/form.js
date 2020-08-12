@@ -24,10 +24,11 @@ const Form = () => {
           <div className=" mt-4 d-flex align-items-center justify-content-center">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
+                <label>Name</label>
                 <Field
                   type="text"
                   name="name"
-                  placeholder="Name"
+                  placeholder=" Your full name"
                   className={
                     touched.name && errors.name
                       ? "is-invalid form-control animated headShake"
@@ -45,10 +46,11 @@ const Form = () => {
                 </ErrorMessage>
               </div>
               <div className="form-group">
+                <label>Apellidos</label>
                 <Field
                   type="text"
                   name="apellidos"
-                  placeholder="Apellidos"
+                  placeholder="your Apellidos"
                   className={
                     touched.apellidos && errors.apellidos
                       ? "is-invalid form-control animated headShake"
