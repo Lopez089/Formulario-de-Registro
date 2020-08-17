@@ -12,7 +12,7 @@ const Form = () => {
         <small className="text-muted  pt-1">IT´S COMPLETELY FREE</small>
       </p>
       <Formik
-        initialValues={{ name: "", apellidos: "" }}
+        initialValues={{ name: "", Username: "" }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           alert(JSON.stringify(values));
@@ -46,29 +46,73 @@ const Form = () => {
                 </ErrorMessage>
               </div>
               <div className="form-group">
-                <label>Apellidos</label>
+                <label>Username</label>
                 <Field
                   type="text"
-                  name="apellidos"
-                  placeholder="your Apellidos"
+                  name="Username"
+                  placeholder="Username"
                   className={
-                    touched.apellidos && errors.apellidos
+                    touched.Username && errors.Username
                       ? "is-invalid form-control animated headShake"
-                      : !touched.apellidos
+                      : !touched.Username
                       ? "form-control"
-                      : touched.apellidos
+                      : touched.Username
                       ? "form-control is-valid"
                       : null
                   }
                 />
-                <ErrorMessage name="apellidos">
+                <ErrorMessage name="Username">
+                  {(msg) => (
+                    <div className="invalid-feedback d-flex">{msg}</div>
+                  )}
+                </ErrorMessage>
+              </div>
+              <div className="form-group">
+                <label>Email</label>
+                <Field
+                  type="email"
+                  name="Email"
+                  placeholder="Email adress"
+                  className={
+                    touched.Email && errors.Email
+                      ? "is-invalid form-control animated headShake"
+                      : !touched.Email
+                      ? "form-control"
+                      : touched.Email
+                      ? "form-control is-valid"
+                      : null
+                  }
+                />
+                <ErrorMessage name="Email">
+                  {(msg) => (
+                    <div className="invalid-feedback d-flex">{msg}</div>
+                  )}
+                </ErrorMessage>
+              </div>
+              <div className="form-group">
+                <label>Password</label>
+                <Field
+                  type="password"
+                  name="Password"
+                  placeholder="*****"
+                  className={
+                    touched.Password && errors.Password
+                      ? "is-invalid form-control animated headShake"
+                      : !touched.Password
+                      ? "form-control"
+                      : touched.Password
+                      ? "form-control is-valid"
+                      : null
+                  }
+                />
+                <ErrorMessage name="Password">
                   {(msg) => (
                     <div className="invalid-feedback d-flex">{msg}</div>
                   )}
                 </ErrorMessage>
               </div>
               <button
-                className="btn btn-info"
+                className="btn btn-info btn-block"
                 type="submit"
                 disabled={!isSubmitting ? null : "disabled"}
               >
