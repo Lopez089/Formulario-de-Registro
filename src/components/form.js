@@ -6,7 +6,7 @@ import "bootstrap";
 
 const Form = () => {
   return (
-    <div className="h-75">
+    <div className="">
       <p className="h3 text-info text-center pt-5"> REGISTER</p>
       <p className="text-center">
         <small className="text-muted  pt-1">IT´S COMPLETELY FREE</small>
@@ -94,7 +94,7 @@ const Form = () => {
                 <Field
                   type="password"
                   name="Password"
-                  placeholder="*****"
+                  placeholder="••••••••"
                   className={
                     touched.Password && errors.Password
                       ? "is-invalid form-control animated headShake"
@@ -111,8 +111,40 @@ const Form = () => {
                   )}
                 </ErrorMessage>
               </div>
+              <div className="form-group">
+                <label>ConfirmPassword</label>
+                <Field
+                  type="Confirm password"
+                  name="ConfirmPassword"
+                  placeholder="••••••••"
+                  className={
+                    touched.ConfirmPassword && errors.ConfirmPassword
+                      ? "is-invalid form-control animated headShake"
+                      : !touched.ConfirmPassword
+                      ? "form-control"
+                      : touched.ConfirmPassword
+                      ? "form-control is-valid"
+                      : null
+                  }
+                />
+                <ErrorMessage name="Password">
+                  {(msg) => (
+                    <div className="invalid-feedback d-flex">{msg}</div>
+                  )}
+                </ErrorMessage>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label">
+                  I accept the Terms of use & Privacy Policy
+                </label>
+              </div>
               <button
-                className="btn btn-info btn-block"
+                className="btn btn-info btn-block mt-3"
                 type="submit"
                 disabled={!isSubmitting ? null : "disabled"}
               >
