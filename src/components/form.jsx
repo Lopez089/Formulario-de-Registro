@@ -18,8 +18,8 @@ const isValid = (touched, errors) => {
 
 const Form = () => {
     return (
-        <div className="">
-            <p className="h3 text-info text-center pt-5"> REGISTER</p>
+        <div className="card p-5  shadow-lg my-5">
+            <p className="h3 text-info text-center "> REGISTER</p>
             <p className="text-center">
                 <small className="text-muted  pt-1">IT´S COMPLETELY FREE</small>
             </p>
