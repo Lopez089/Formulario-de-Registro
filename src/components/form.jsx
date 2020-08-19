@@ -4,6 +4,18 @@ import "animate.css";
 import validationSchema from "../service/validationForm";
 import "bootstrap";
 
+const isValid = (touched, errors) => {
+    if (touched.name && errors.name) {
+        return "is-invalid form-control animated headShake";
+    }
+    if (!touched.name) {
+        return "form-control";
+    }
+    if (touched.name) {
+        return "form-control is-valid shake";
+    }
+};
+
 const Form = () => {
     return (
         <div className="">
@@ -31,100 +43,65 @@ const Form = () => {
                     <div className=" mt-4 d-flex align-items-center justify-content-center">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <label>Name</label>
+                                <label htmlFor="name">Name</label>
                                 <Field
+                                    id="name"
                                     type="text"
                                     name="name"
                                     placeholder=" Your full name"
-                                    className={
-                                        touched.name && errors.name
-                                            ? "is-invalid form-control animated headShake"
-                                            : !touched.name
-                                            ? "form-control"
-                                            : touched.name
-                                            ? "form-control is-valid shake"
-                                            : null
-                                    }
+                                    className={isValid(touched, errors)}
                                 />
                                 <ErrorMessage name="name">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
                                 </ErrorMessage>
                             </div>
                             <div className="form-group">
-                                <label>Username</label>
+                                <label htmlFor="Username">Username</label>
                                 <Field
+                                    id="Username"
                                     type="text"
                                     name="Username"
                                     placeholder="Username"
-                                    className={
-                                        touched.Username && errors.Username
-                                            ? "is-invalid form-control animated headShake"
-                                            : !touched.Username
-                                            ? "form-control"
-                                            : touched.Username
-                                            ? "form-control is-valid"
-                                            : null
-                                    }
+                                    className={isValid(touched, errors)}
                                 />
                                 <ErrorMessage name="Username">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
                                 </ErrorMessage>
                             </div>
                             <div className="form-group">
-                                <label>Email</label>
+                                <label htmlFor="email">Email</label>
                                 <Field
+                                    id="email"
                                     type="email"
                                     name="Email"
                                     placeholder="Email adress"
-                                    className={
-                                        touched.Email && errors.Email
-                                            ? "is-invalid form-control animated headShake"
-                                            : !touched.Email
-                                            ? "form-control"
-                                            : touched.Email
-                                            ? "form-control is-valid"
-                                            : null
-                                    }
+                                    className={isValid(touched, errors)}
                                 />
                                 <ErrorMessage name="Email">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
                                 </ErrorMessage>
                             </div>
                             <div className="form-group">
-                                <label>Password</label>
+                                <label htmlFor="password">Password</label>
                                 <Field
+                                    id="password"
                                     type="password"
                                     name="Password"
                                     placeholder="••••••••"
-                                    className={
-                                        touched.Password && errors.Password
-                                            ? "is-invalid form-control animated headShake"
-                                            : !touched.Password
-                                            ? "form-control"
-                                            : touched.Password
-                                            ? "form-control is-valid"
-                                            : null
-                                    }
+                                    className={isValid(touched, errors)}
                                 />
                                 <ErrorMessage name="Password">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
                                 </ErrorMessage>
                             </div>
                             <div className="form-group">
-                                <label>ConfirmPassword</label>
+                                <label htmlFor="confirmPassword">ConfirmPassword</label>
                                 <Field
+                                    id="confirmPassword"
                                     type="password"
                                     name="ConfirmPassword"
                                     placeholder="••••••••"
-                                    className={
-                                        touched.ConfirmPassword && errors.ConfirmPassword
-                                            ? "is-invalid form-control animated headShake"
-                                            : !touched.ConfirmPassword
-                                            ? "form-control"
-                                            : touched.ConfirmPassword
-                                            ? "form-control is-valid"
-                                            : null
-                                    }
+                                    className={isValid(touched, errors)}
                                 />
                                 <ErrorMessage name="ConfirmPassword">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -132,11 +109,12 @@ const Form = () => {
                             </div>
                             <div>
                                 <Field
+                                    id="termsOfService"
                                     type="checkbox"
                                     name="termsOfService"
                                     class="form-check-input"
                                 />
-                                <label className="form-check-label">
+                                <label htmlFor="termsOfService" className="form-check-label">
                                     I accept the Terms of use & Privacy Policy
                                 </label>
                                 <ErrorMessage name="termsOfService">
