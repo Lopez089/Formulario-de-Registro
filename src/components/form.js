@@ -12,7 +12,14 @@ const Form = () => {
         <small className="text-muted  pt-1">IT´S COMPLETELY FREE</small>
       </p>
       <Formik
-        initialValues={{ name: "", Username: "" }}
+        initialValues={{
+          name: "",
+          Username: "",
+          Email: "",
+          Password: "",
+          ConfirmPassword: "",
+          termsOfService: false,
+        }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           alert(JSON.stringify(values));
@@ -114,7 +121,7 @@ const Form = () => {
               <div className="form-group">
                 <label>ConfirmPassword</label>
                 <Field
-                  type="Confirm password"
+                  type="password"
                   name="ConfirmPassword"
                   placeholder="••••••••"
                   className={
@@ -127,21 +134,26 @@ const Form = () => {
                       : null
                   }
                 />
-                <ErrorMessage name="Password">
+                <ErrorMessage name="ConfirmPassword">
                   {(msg) => (
                     <div className="invalid-feedback d-flex">{msg}</div>
                   )}
                 </ErrorMessage>
               </div>
               <div>
-                <input
+                <Field
                   type="checkbox"
+                  name="termsOfService"
                   class="form-check-input"
-                  id="exampleCheck1"
                 />
                 <label class="form-check-label">
                   I accept the Terms of use & Privacy Policy
                 </label>
+                <ErrorMessage name="termsOfService">
+                  {(msg) => (
+                    <div className="invalid-feedback d-flex">{msg}</div>
+                  )}
+                </ErrorMessage>
               </div>
               <button
                 className="btn btn-info btn-block mt-3"
