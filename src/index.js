@@ -5,4 +5,9 @@ import "animate.css";
 import "./styles.css";
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    rootElement,
+);

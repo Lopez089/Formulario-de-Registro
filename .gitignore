@@ -1,5 +1,14 @@
-# Creado por https://www.toptal.com/developers/gitignore/api/node,react,macos
-# Edite en https://www.toptal.com/developers/gitignore?templates=node,react,macos
+# Creado por https://www.toptal.com/developers/gitignore/api/node,react,firebase,macos
+# Edite en https://www.toptal.com/developers/gitignore?templates=node,react,firebase,macos
+
+### Firebase ###
+.idea
+** / node_modules / *
+** /. firebaserc
+
+### Parche de Firebase ###
+.runtimeconfig.json
+.base de fuego /
 
 ### Mac OS ###
 # General
@@ -151,4 +160,4 @@ psd
 pulgar
 bosquejo
 
-# Fin de https://www.toptal.com/developers/gitignore/api/node,react,macos
+# Fin de https://www.toptal.com/developers/gitignore/api/node,react,firebase,macos

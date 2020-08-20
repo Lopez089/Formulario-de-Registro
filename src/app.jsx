@@ -8,8 +8,8 @@ function App() {
         <>
             <div className="d-flex align-items-center flex-column">
                 <Form />
-                <Footer BgColor={StateFooter.BgColor} Social={StateFooter.Redes} />
             </div>
+            <Footer BgColor={StateFooter.BgColor} Social={StateFooter.Redes} />
         </>
     );
 }
