@@ -5,13 +5,13 @@ import validationSchema from "../service/validationForm";
 import "bootstrap";
 
 const isValid = (touched, errors) => {
-    if (touched.name && errors.name) {
+    if (touched && errors) {
         return "is-invalid form-control animated headShake";
     }
-    if (!touched.name) {
+    if (!touched) {
         return "form-control";
     }
-    if (touched.name) {
+    if (touched) {
         return "form-control is-valid shake";
     }
 };
@@ -49,7 +49,7 @@ const Form = () => {
                                     type="text"
                                     name="name"
                                     placeholder=" Your full name"
-                                    className={isValid(touched, errors)}
+                                    className={isValid(touched.name, errors.name)}
                                 />
                                 <ErrorMessage name="name">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -62,7 +62,7 @@ const Form = () => {
                                     type="text"
                                     name="Username"
                                     placeholder="Username"
-                                    className={isValid(touched, errors)}
+                                    className={isValid(touched.Username, errors.Username)}
                                 />
                                 <ErrorMessage name="Username">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -75,7 +75,7 @@ const Form = () => {
                                     type="email"
                                     name="Email"
                                     placeholder="Email adress"
-                                    className={isValid(touched, errors)}
+                                    className={isValid(touched.Email, errors.Email)}
                                 />
                                 <ErrorMessage name="Email">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -88,7 +88,7 @@ const Form = () => {
                                     type="password"
                                     name="Password"
                                     placeholder="••••••••"
-                                    className={isValid(touched, errors)}
+                                    className={isValid(touched.Password, errors.Password)}
                                 />
                                 <ErrorMessage name="Password">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -101,7 +101,10 @@ const Form = () => {
                                     type="password"
                                     name="ConfirmPassword"
                                     placeholder="••••••••"
-                                    className={isValid(touched, errors)}
+                                    className={isValid(
+                                        touched.confirmPassword,
+                                        errors.confirmPassword,
+                                    )}
                                 />
                                 <ErrorMessage name="ConfirmPassword">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
