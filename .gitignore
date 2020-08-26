@@ -1,6 +1,6 @@
 # Creado por https://www.toptal.com/developers/gitignore/api/node,react,firebase,macos
 # Edite en https://www.toptal.com/developers/gitignore?templates=node,react,firebase,macos
-
+/build
 ### Firebase ###
 .idea
 ** / node_modules / *

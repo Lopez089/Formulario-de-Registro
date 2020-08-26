@@ -112,7 +112,7 @@ const Form = () => {
                                     id="termsOfService"
                                     type="checkbox"
                                     name="termsOfService"
-                                    class="form-check-input"
+                                    className="form-check-input"
                                 />
                                 <label htmlFor="termsOfService" className="form-check-label">
                                     I accept the Terms of use & Privacy Policy

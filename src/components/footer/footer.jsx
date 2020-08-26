@@ -9,7 +9,7 @@ const Footer = (props) => {
                 <p className="h5 text-center text-white">Sígueme</p>
                 <div className="container d-flex justify-content-center">
                     {Social.map((s) => (
-                        <a href={s.url} target="_blank" rel="noopener noreferrer">
+                        <a href={s.url} target="_blank" rel="noopener noreferrer" key={s.url}>
                             <i className={`${s.icono} h4 text-white m-3`} />
                         </a>
                     ))}
