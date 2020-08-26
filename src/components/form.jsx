@@ -2,7 +2,6 @@ import React from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import "animate.css";
 import validationSchema from "../service/validationForm";
-import "bootstrap";
 
 const isValid = (touched, errors) => {
     if (touched && errors) {
@@ -102,8 +101,8 @@ const Form = () => {
                                     name="ConfirmPassword"
                                     placeholder="••••••••"
                                     className={isValid(
-                                        touched.confirmPassword,
-                                        errors.confirmPassword,
+                                        touched.ConfirmPassword,
+                                        errors.ConfirmPassword,
                                     )}
                                 />
                                 <ErrorMessage name="ConfirmPassword">
