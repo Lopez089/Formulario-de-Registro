@@ -9,7 +9,7 @@ function App() {
             <div className="d-flex align-items-center flex-column">
                 <Form />
             </div>
-            <Footer BgColor={StateFooter.BgColor} Social={StateFooter.Redes} />
+            <Footer BgColor={StateFooter.BgColor} Social={StateFooter.Social} />
         </>
     );
 }

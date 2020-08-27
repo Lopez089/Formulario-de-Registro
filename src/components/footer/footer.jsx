@@ -8,9 +8,14 @@ const Footer = (props) => {
             <div className="h-100 d-flex flex-column justify-content-center">
                 <p className="h5 text-center text-white">Sígueme</p>
                 <div className="container d-flex justify-content-center">
-                    {Social.map((s) => (
-                        <a href={s.url} target="_blank" rel="noopener noreferrer" key={s.url}>
-                            <i className={`${s.icono} h4 text-white m-3`} />
+                    {Social.map((dataSocial) => (
+                        <a
+                            href={dataSocial.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            key={dataSocial.URL}
+                        >
+                            <i className={`${dataSocial.icon} h4 text-white m-3`} />
                         </a>
                     ))}
                 </div>

@@ -2,26 +2,24 @@ import { object, string, boolean, ref } from "yup";
 
 const validationSchema = object().shape({
     name: string()
-        .min(2, "Escribe tu nombre")
-        .max(25, "Debe de tener menos de 25 caracteres")
-        .required("Debe de introducir tu nombre"),
+        .min(2, "Write your name")
+        .max(25, "Must be less than 25 characters")
+        .required("You must enter your name"),
     Username: string()
-        .min(2, "Escribe tu Username")
-        .max(25, "Debe de tener menos de 25 caracteres")
-        .required("Debe de introducir tu username"),
-    Email: string()
-        .email("El correo electrónico debe ser válido")
-        .required("Debe de introducir tu email"),
+        .min(2, "Write your Username")
+        .max(25, "Must be less than 25 characters")
+        .required("You must enter your username"),
+    Email: string().email("enter a valid email").required("You must enter your email"),
     Password: string()
-        .min(8, "Debe de tener al menos 8 caracteres")
-        .max(15, "Debe de tener menos de 15 caracteres")
-        .required("Debe de introducir tu Password"),
+        .min(8, "Must be at least 8 characters")
+        .max(15, "Must be less than 15 characters")
+        .required("You must enter your Password"),
     ConfirmPassword: string()
-        .required("repita su contraseña")
+        .required("repeat your password")
         .oneOf([ref("Password")], "Passwords must match"),
     termsOfService: boolean()
-        .oneOf([true], "accept the Terms of use & Privacy Policy")
-        .required("Tiene que acptar los terminos y condiciones"),
+        .oneOf([true], "Accept the Terms of use & Privacy Policy")
+        .required("Accept the Terms of use & Privacy Policy"),
 });
 
 export default validationSchema;
