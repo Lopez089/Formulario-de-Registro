@@ -3,7 +3,7 @@ import { Formik, Field, ErrorMessage } from "formik";
 import "animate.css";
 import validationSchema from "../service/validationForm";
 
-const isValid = (touched, errors) => {
+const isValidInput = (touched, errors) => {
     if (touched && errors) {
         return "is-invalid form-control animated headShake";
     }
@@ -38,7 +38,7 @@ const Form = () => {
                     setSubmitting(false);
                 }}
             >
-                {({ errors, handleSubmit, isSubmitting, touched }) => (
+                {({ errors, handleSubmit, touched, isValid, dirty }) => (
                     <div className=" mt-4 d-flex align-items-center justify-content-center">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
@@ -48,7 +48,7 @@ const Form = () => {
                                     type="text"
                                     name="name"
                                     placeholder=" Your full name"
-                                    className={isValid(touched.name, errors.name)}
+                                    className={isValidInput(touched.name, errors.name)}
                                 />
                                 <ErrorMessage name="name">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -61,7 +61,7 @@ const Form = () => {
                                     type="text"
                                     name="Username"
                                     placeholder="Username"
-                                    className={isValid(touched.Username, errors.Username)}
+                                    className={isValidInput(touched.Username, errors.Username)}
                                 />
                                 <ErrorMessage name="Username">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -74,7 +74,7 @@ const Form = () => {
                                     type="email"
                                     name="Email"
                                     placeholder="Email adress"
-                                    className={isValid(touched.Email, errors.Email)}
+                                    className={isValidInput(touched.Email, errors.Email)}
                                 />
                                 <ErrorMessage name="Email">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -87,7 +87,7 @@ const Form = () => {
                                     type="password"
                                     name="Password"
                                     placeholder="••••••••"
-                                    className={isValid(touched.Password, errors.Password)}
+                                    className={isValidInput(touched.Password, errors.Password)}
                                 />
                                 <ErrorMessage name="Password">
                                     {(msg) => <div className="invalid-feedback d-flex">{msg}</div>}
@@ -100,7 +100,7 @@ const Form = () => {
                                     type="password"
                                     name="ConfirmPassword"
                                     placeholder="••••••••"
-                                    className={isValid(
+                                    className={isValidInput(
                                         touched.ConfirmPassword,
                                         errors.ConfirmPassword,
                                     )}
@@ -126,7 +126,7 @@ const Form = () => {
                             <button
                                 className="btn btn-info btn-block mt-3"
                                 type="submit"
-                                disabled={!isSubmitting ? null : "disabled"}
+                                disabled={!(isValid && dirty)}
                             >
                                 CREATE ACCOUNT
                             </button>
