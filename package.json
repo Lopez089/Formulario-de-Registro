@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@welldone-software/why-did-you-render": "^5.0.0-alpha.2",
     "animate.css": "3.7.2",
     "formik": "2.0.1-rc.13",
     "prop-types": "^15.7.2",

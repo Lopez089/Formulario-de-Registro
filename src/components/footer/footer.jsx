@@ -28,5 +28,5 @@ Footer.propTypes = {
     BgColor: PropTypes.string.isRequired,
     Social: PropTypes.arrayOf.isRequired,
 };
-
-export default Footer;
+Footer.whyDidYouRender = true;
+export default React.memo(Footer);

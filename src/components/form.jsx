@@ -44,6 +44,7 @@ const Form = () => {
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <Field
+                                    autofocus="autofocus"
                                     id="name"
                                     type="text"
                                     name="name"
@@ -137,5 +138,5 @@ const Form = () => {
         </div>
     );
 };
-
+Form.whyDidYouRender = true;
 export default Form;
