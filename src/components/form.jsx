@@ -1,7 +1,26 @@
+import * as firebase from "firebase/app";
 import React from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import "animate.css";
 import validationSchema from "../service/validationForm";
+
+// validation login//
+
+import "firebase/auth";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyC2mTEiADWDdKUiy2O6vA4sSkwki7mIEFo",
+    authDomain: "registration-form-69060.firebaseapp.com",
+    databaseURL: "https://registration-form-69060.firebaseio.com",
+    projectId: "registration-form-69060",
+    storageBucket: "registration-form-69060.appspot.com",
+    messagingSenderId: "893847486245",
+    appId: "1:893847486245:web:69888b9c6f0d59659924cc",
+    measurementId: "G-J2ESXM1NPQ",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 const isValidInput = (touched, errors) => {
     if (touched && errors) {
@@ -33,7 +52,11 @@ const Form = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
-                    alert(JSON.stringify(values));
+                    console.log(JSON.stringify(values));
+                    firebase
+                        .auth()
+                        .createUserWithEmailAndPassword("aragonlopezjuan87@gmail.com", "sdfasfsa");
+
                     resetForm();
                     setSubmitting(false);
                 }}
